@@ -1,1 +1,61 @@
-<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Random Joke Generator</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            display: flex;\n            flex-direction: column;\n            justify-content: center;\n            align-items: center;\n            height: 100vh;\n            background-color: #f0f0f0;\n        }\n        button {\n            padding: 10px 20px;\n            font-size: 16px;\n            cursor: pointer;\n        }\n        #joke {\n            margin: 20px;\n            font-size: 24px;\n            text-align: center;\n        }\n    </style>\n</head>\n<body>\n    <h1>Random Joke Generator</h1>\n    <div id=\"joke\">Click the button to get a joke!</div>\n    <button id=\"jokeButton\">Get Joke</button>\n\n    <script>\n        document.getElementById('jokeButton').addEventListener('click', async () => {\n            const response = await fetch('https://official-joke-api.appspot.com/random_joke');\n            const data = await response.json();\n            document.getElementById('joke').innerHTML = `${data.setup} - ${data.punchline}`;\n        });\n    </script>\n</body>\n</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Joke API</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#stats">Stats</a></li>
+            <li><a href="#cta">Get Started</a></li>
+        </ul>
+    </nav>
+
+    <section id="hero">
+        <h1>Random Joke API</h1>
+        <p>Your source for random jokes!</p>
+        <a href="#cta" class="cta-button">Get Started</a>
+    </section>
+
+    <section id="features">
+        <h2>Features</h2>
+        <div class="features-grid">
+            <div class="feature">
+                <h3>Easy to Use</h3>
+                <p>Simple and straightforward API for accessing jokes.</p>
+            </div>
+            <div class="feature">
+                <h3>Responsive Design</h3>
+                <p>Accessible on all devices, from mobile to desktop.</p>
+            </div>
+            <div class="feature">
+                <h3>Rich Jokes Collection</h3>
+                <p>Thousands of jokes available to brighten your day!</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="stats">
+        <h2>Statistics</h2>
+        <ul>
+            <li>Total Jokes: 1000+</li>
+            <li>Active Users: 500+</li>
+            <li>Satisfaction Rate: 95%</li>
+        </ul>
+    </section>
+
+    <section id="cta">
+        <h2>Ready to Laugh?</h2>
+        <a href="#" class="cta-button">Get Started</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Random Joke API. All rights reserved.</p>
+    </footer>
+</body>
+</html>
